@@ -1,0 +1,15 @@
+#footer {
+    
+    left:0px;
+    bottom:0px;
+    height:75px;
+    background:white;
+    align-self: flex-end;
+ }
+
+ @media (max-width: 768px) {
+    .modal-dialog {
+      width: 300px;
+    }
+  }
+  
