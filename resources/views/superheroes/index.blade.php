@@ -8,7 +8,7 @@
 
 <div class="container">
 <a class="btn btn-primary mb-3" href="{{route('superheroes.create')}}">Crear Superhéroe</a>
-<a class="btn btn-primary mb-3 float-right" href="{{route('superheroes.create')}}">Imprimir</a>
+<a class="btn btn-primary mb-3 float-right" href="{{ url('superheroes.show') }}">Imprimir</a>
 
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
@@ -43,7 +43,9 @@
         @include('superheroes.confirmarBorrar')
     @endforeach
   </tbody>
-</table>{{$superheroes->links()}}
+</table>
+
+{{$superheroes->links()}}
 </div>
 
 

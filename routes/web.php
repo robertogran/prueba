@@ -13,6 +13,10 @@
 
 Route::get('/', function () {
     return view('welcome');
+    /* $pdf = PDF::loadview('welcome');
+    return $pdf->stream(); */
 });
 
 Route::resource('superheroes','SuperheroeController');
+
+Route::get('superheroes.show','SuperheroeController@show');

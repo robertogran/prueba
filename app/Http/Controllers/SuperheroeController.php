@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Superheroe;
+use Barryvdh\DomPDF\Facade as PDF;
 
 use Illuminate\Http\Request;
 
@@ -51,9 +52,11 @@ class SuperheroeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $superheroes = Superheroe::all();
+        $pdf = PDF::loadview('superheroes.mostrar', compact('superheroes'));
+        return $pdf->stream();
     }
 
     /**
